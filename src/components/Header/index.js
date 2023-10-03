@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import Logo from './Logo';
-import { DribbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../Icons';
+import { DribbleIcon, GithubIcon, LinkedinIcon, TwitterIcon, SunIcon, MoonIcon } from '../Icons';
 
 const Header = () => {
   return (
@@ -16,7 +16,9 @@ const Header = () => {
         <Link href="/" className='mr-2'>Home</Link>
         <Link href="/about" className='mx-2'>About</Link>
         <Link href="/contact" className='mr-2'>Contact</Link>
-        <button>TS</button>
+        <button>
+          <SunIcon />
+        </button>
       </nav>
       {/* External social media links */}
       <div>
