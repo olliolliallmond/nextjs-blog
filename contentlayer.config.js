@@ -37,10 +37,17 @@ const Blog = defineDocumentType(() => ({
       of: { type: 'string' },
     }
   },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
+    },
+  },
 }))
 
 
 export default makeSource({
   /* options */
   contentDirPath: 'content',
+  documentTypes: [ Blog ]
 })
