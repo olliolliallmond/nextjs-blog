@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 
 const BlogLayoutThree = ({blog}) => {
   return (
-    <div className='flex flex-col items-center text-dark' >
+    <div className='group flex flex-col items-center text-dark' >
       {/* Image as Link */}
       <Link href={blog.url} className='h-full rounded-xl overflow-hidden'>
         <Image src={blog.image.filePath.replace("../public", "")}
@@ -13,7 +13,8 @@ const BlogLayoutThree = ({blog}) => {
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}
-          className='aspect-[4/3] w-full h-full object-center object-cover'
+          className='aspect-[4/3] w-full h-full object-center object-cover
+                     group-hover:scale-105 transition-all ease duration-300 '
         />
       </Link>
 
@@ -24,7 +25,7 @@ const BlogLayoutThree = ({blog}) => {
         <Link href={blog.url} className='inline-block my-1'>
           <h2 className='font-semibold capitalize text-lg' >
             <span className="bg-gradient-to-r from-accent/50 to-accent/50 bg-[length:0px_3px] 
-                              hover:bg-[length:100%_3px] bg-left-bottom bg-no-repeat 
+                              group-hover:bg-[length:100%_3px] bg-left-bottom bg-no-repeat 
                               transition-[background-size] duration-500">
               {blog.title}
             </span>
