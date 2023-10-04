@@ -6,7 +6,7 @@ import Tag from '../Elements/Tag'
 
 const BlogLayoutOne = ({blog}) => {
   return (
-    <div className='inline-block overflow-hidden rounded-xl' >
+    <div className='group inline-block overflow-hidden rounded-xl' >
       {/* Overlay */}
       <div className="absolute top-0 left-0 bottom-0 right-0 h-full 
                       bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10 " />
@@ -28,7 +28,7 @@ const BlogLayoutOne = ({blog}) => {
         <Link href={blog.url} className='mt-6'>
           <h2 className='font-bold capitalize text-2xl text-light mt-4' >
             <span className="bg-gradient-to-r from-accent to-accent bg-[length:0px_4px] 
-                              hover:bg-[length:100%_4px] bg-left-bottom bg-no-repeat 
+                              group-hover:bg-[length:100%_4px] bg-left-bottom bg-no-repeat 
                               transition-[background-size] duration-500">
               {blog.title}
             </span>
