@@ -2,23 +2,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { format } from 'date-fns'
 
-const BlogLayoutTwo = ({blog}) => {
+const BlogLayoutThree = ({blog}) => {
   return (
-    <div className='grid grid-cols-12 gap-4 items-center text-dark' >
+    <div className='flex flex-col items-center text-dark' >
       {/* Image as Link */}
-      <Link href={blog.url} className='col-span-4 h-full rounded-xl overflow-hidden'>
+      <Link href={blog.url} className='h-full rounded-xl overflow-hidden'>
         <Image src={blog.image.filePath.replace("../public", "")}
           placeholder='blur'
           blurDataURL={blog.image.blurhashDataUrl}
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}
-          className='aspect-square w-full h-full object-center object-cover'
+          className='aspect-[4/3] w-full h-full object-center object-cover'
         />
       </Link>
 
       {/* Details */}
-      <div className="w-full col-span-8 ">
+      <div className="w-full flex flex-col mt-4">
         <span className='uppercase text-accent font-semibold text-sm'>{blog.tags[0]}</span>
 
         <Link href={blog.url} className='inline-block my-1'>
@@ -41,4 +41,4 @@ const BlogLayoutTwo = ({blog}) => {
   )
 }
 
-export default BlogLayoutTwo
+export default BlogLayoutThree
